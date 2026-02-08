@@ -1,11 +1,11 @@
 const app = require('./app');
-const connectDB = require('./config//db_mongo');
 const ENV = require('./config/env');
 
-    (async () => {
-    await connectDB(ENV.MONGO_URI, ENV.DB_NAME);
+//Port
+const PORT = ENV.PORT || 8080
 
-    app.listen(ENV.PORT, () => {
-        console.log(`🚀 Server running on port ${ENV.PORT}`);
+//listen
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
     });
-    })();
+
