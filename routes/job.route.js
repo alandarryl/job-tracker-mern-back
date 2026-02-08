@@ -1,92 +1,17 @@
 const express = require("express");
-const route = express.Router();
-const job = require("../models/job.model");
-
-const getAllJob = route.get("/All", async(res, req) =>{
-    try{
-        //
-    } catch{
-        //
-    }
-} );
-
-const getOneJob = route.get("/:id", async(res, req) =>{
-    try{
-        //
-    } catch{
-        //
-    }
-} );
+const router = express.Router();
 
 
-const getJobByType = route.get("/:id", async(res, req) =>{
-    try{
-        //
-    } catch{
-        //
-    }
-} );
+const JobController = require("../controllers/job.controller");
 
+router.post('/enter', JobController.enterJob );
 
-const getJobByData = route.get("/:id", async(res, req) =>{
-    try{
-        //
-    } catch{
-        //
-    }
-} );
+router.get("/getAll", JobController.getAll);
 
-const sortJobByDatePost = route.get("/:id", async(res, req) =>{
-    try{
-        //
-    } catch{
-        //
-    }
-} );
+router.get("/getOne/:id", JobController.getOne);
 
-const sortJobPostDate = route.get("/:id", async(res, req) =>{
-    try{
-        //
-    } catch{
-        //
-    }
-} );
+router.put("/update/:id", JobController.updateEnterJob);
 
-
-const AddNewPost = route.post("/:id", async(res, req) =>{
-    try{
-        //
-    } catch{
-        //
-    }
-} );
-
-
-
-
-const updateJob = route.put("/:id", async(res, req) =>{
-    try{
-        //
-    } catch{
-        //
-    }
-} );
-
-
-const deleteJob = route.delete("/:id", async(res, req) =>{
-    try{
-        //
-    } catch{
-        //
-    }
-} );
-
-const UpdateAnswer = route.patch("/:id", async(res, req) =>{
-    try{
-        //
-    } catch{
-        //
-    }
-} );
+router.delete("delete/:id", JobController.deleteEnterJob);
 
 
