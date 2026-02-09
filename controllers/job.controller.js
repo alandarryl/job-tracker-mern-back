@@ -6,7 +6,7 @@ const getAll = async (req,res, next) =>{
         //
         const jobs = await ModelJob.find();
 
-        if(!job) return res.status(404).json("Jobs not found");
+        if(!jobs) return res.status(404).json("Jobs not found");
 
         res.status(200).json(jobs)
 
@@ -43,7 +43,7 @@ const enterJob = async (res, req, next) =>{
         //
 
         const job = await ModelJob.create(req.body);
-        res.status(201).json(article);
+        res.status(201).json(job);
 
     }catch(error){
         //

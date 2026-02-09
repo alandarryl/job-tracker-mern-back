@@ -1,4 +1,5 @@
 const express = require('express');
+const app = express();
 const connectdb = require('./config/db_mongo');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');

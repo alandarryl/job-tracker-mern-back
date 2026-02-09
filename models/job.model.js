@@ -17,24 +17,24 @@ const JobSchema = mongoose.Schema({
     typeOfJob: {
         type: String,
         enum: ["Alternance", "stage", "CDI", "CDD", "Freelance", "Temps plein", "Temps partiel", "job etudian", "Autre"],
-        required: true
+        default: "Autre"
     },
     description: {
         type: String,
         required: true
     },
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    }
-    ,
+    // user: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'User'
+    // }
+    // ,
     date_posted: {
         type: Date,
-        required: true
+        // required: true
     },
     date_candidature: {
         type: Date,
-        required: true
+        // required: true
     },
     moyen_candidature:{
         type: String
@@ -51,7 +51,7 @@ const JobSchema = mongoose.Schema({
         linkedin: {type: String}
     },
     rappel: {
-        premier_rappel: {type: Date , required: true },
+        premier_rappel: {type: Date },
         second_rappel: {type: Date},
         troisieme_rappel: {type: Date}
     },

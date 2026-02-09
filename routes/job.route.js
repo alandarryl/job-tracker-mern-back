@@ -14,4 +14,4 @@ router.put("/update/:id", JobController.updateEnterJob);
 
 router.delete("delete/:id", JobController.deleteEnterJob);
 
-
+module.exports = router
