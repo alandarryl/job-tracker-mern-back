@@ -15,20 +15,11 @@ const JobSchema = mongoose.Schema({
         required: true
     }
     ,
-    typeOfJob: {
+    contrat: {
         type: String,
         enum: ["alternance", "stage", "CDI", "CDD", "Freelance", "Temps plein", "Temps partiel", "job etudian", "Autre"],
         default: "Autre"
     },
-    // user: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'User'
-    // }
-    // ,
-    // date_candidature: {
-    //     type: Date,
-    //     required: true
-    // },
     status: {
         type: String,
         enum: ["En attente", "entretien prevu",  "Accepté", "Refusé"],

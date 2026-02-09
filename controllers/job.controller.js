@@ -38,20 +38,21 @@ const sortRecentEnterJob = async (req, res, next) =>{
 
 
 
-const enterJob = async (res, req, next) =>{
+const enterJob = async (req, res, next) =>{
     try{
         //
 
+        console.log(req.body);
         const job = await ModelJob.create(req.body);
         res.status(201).json(job);
 
-    }catch(error){
+    } catch(error){
         //
         next(createError(500, "Failed enter job"))
     }
 }
 
-const deleteEnterJob = async (res, req, next) =>{
+const deleteEnterJob = async (req, res, next) =>{
     try{
         //
         const job = await ModelJob.findByIdAndDelete(req.params.id);
@@ -65,7 +66,7 @@ const deleteEnterJob = async (res, req, next) =>{
     }
 }
 
-const updateEnterJob = async (res, req, next) =>{
+const updateEnterJob = async (req, res, next) =>{
     try{
         //
         const job = await ModelJob.findByIdAndUpdate(req.params.id,

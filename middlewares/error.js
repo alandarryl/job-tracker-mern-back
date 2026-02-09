@@ -1,4 +1,4 @@
-const createError = (status, message, details = null) => {
+const createError = (status, message, details) => {
     // crée une nouvelle instance d'erreur vide
     const error = new Error()
     /* 
