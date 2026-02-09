@@ -44,6 +44,14 @@ const enterJob = async (req, res, next) =>{
 
         console.log(req.body);
         const job = await ModelJob.create(req.body);
+
+
+        if (!req.body.poste || !req.body.entreprise || !req.body.offerLink) {
+                return next(createError(400, "Champs obligatoires manquants"));
+            }
+
+
+
         res.status(201).json(job);
 
     } catch(error){
